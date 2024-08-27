@@ -9,7 +9,14 @@ from time import sleep
 import sys
 from os import system
 
+#
+# FSK Frequency unit in kHz
+# BPSK Frequency unit in Hz
+#
+
 freq = "436.9e3"
+freq_bpsk = "436.9e6"
+
 
 print("CubeSatSim v1.1 rpitx.py starting...")
 print(f"  Frequency: {freq}")
@@ -279,7 +286,7 @@ if __name__ == "__main__":
 		elif (mode == 'b'):
 			print("BPSK")
 #			system("sudo nc -l 8080 | csdr convert_i16_f | csdr fir_interpolate_cc 2 | csdr dsb_fc | csdr bandpass_fir_fft_cc 0.002 0.06 0.01 | csdr fastagc_ff | sudo /home/pi/rpitx/sendiq -i /dev/stdin -s 96000 -f 434.9e6 -t float &")
-			system(f"sudo nc -l 8080 | csdr convert_i16_f | csdr fir_interpolate_cc 2 | csdr dsb_fc | csdr bandpass_fir_fft_cc 0.002 0.06 0.01 | csdr fastagc_ff | sudo /home/pi/rpitx/sendiq -i /dev/stdin -s 96000 -f {freq} -t float &")
+			system(f"sudo nc -l 8080 | csdr convert_i16_f | csdr fir_interpolate_cc 2 | csdr dsb_fc | csdr bandpass_fir_fft_cc 0.002 0.06 0.01 | csdr fastagc_ff | sudo /home/pi/rpitx/sendiq -i /dev/stdin -s 96000 -f {freq_bpsk} -t float &")
 			print("Turning LED on/off")
 			while 1:
 				output(txLed, txLedOff)
