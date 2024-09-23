@@ -2685,6 +2685,10 @@
     (effects (font (size 1.27 1.27)) (justify left bottom))
     (uuid e0e4d546-6035-4f18-96e1-41c4a1a544e9)
   )
+  (text "DNI-CC1101" (at 109.728 97.79 0)
+    (effects (font (size 1.27 1.27)) (justify left bottom))
+    (uuid f37ead94-26fc-441d-b17b-f7ed904e788d)
+  )
 
   (label "PA11" (at 274.32 146.05 0) (fields_autoplaced)
     (effects (font (size 1.27 1.27)) (justify left bottom))
